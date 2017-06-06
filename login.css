@@ -1,0 +1,122 @@
+body {
+  background-color: #009688;
+  font-family: 'Roboto', sans-serif;
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  margin: 16px auto;
+  padding: 24px;
+  max-width: 80%;
+  background-color: #F5F5F5;
+  color: rgba(0, 0, 0, 0.87);
+  border-radius: 8px;
+  box-shadow: 4px 4px rgba(0, 0, 0, 0.15);
+}
+
+.logo {
+  width: 96px;
+  height: 96px;
+  background-color: #009688;
+  border-radius: 96px;
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.auth-options {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.auth-options.not-loaded {
+  display: none;
+}
+
+.auth-options button {
+  margin: 8px 16px;
+  border: none;
+  background-color: transparent;
+  border-radius: 2px;
+  box-shadow: 2px 2px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+  outline: none;
+}
+
+.auth-options button img {
+  margin-left: 8px;
+  width: 18px;
+  height: 18px;
+  margin-right: 24px;
+}
+
+.auth-options button span {
+  flex-grow: 1;
+  padding: 8px;
+  font-size: 14px;
+}
+
+.auth-options button.gsi {
+  background-color: white;
+  color: rgba(0,0,0,0.87);
+}
+
+.auth-options button.fb {
+  background-color: #3b5998;
+  color: white;
+}
+
+.divider {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+}
+
+.divider-segment {
+  height: 1px;
+  background-color: #424242;
+  flex-grow: 1;
+}
+
+.divider-text {
+  margin: 16px;
+}
+
+.email-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.email {
+  font-size: 14px;
+  border-width: 0 0 1px 0;
+  border-color: #BDBDBD;
+  background-color: transparent;
+  width: 100%;
+  flex-grow: 1;
+  outline: none;
+}
+
+button.email-login {
+  background-color: #ffc107;
+  border-radius: 4px;
+  width: 48px;
+  color: rgba(0, 0, 0, 0.54);
+  margin: 0 0 0 8px;
+}

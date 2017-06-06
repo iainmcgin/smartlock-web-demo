@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1; maximum-scale=1.0; user-scalable=false;">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <script src="https://smartlock.sandbox.google.com/client"></script>
+  <script src="common.js"></script>
+  <script src="login.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="common.css"></link>
+  <link rel="stylesheet" type="text/css" href="login.css"></link>
+</head>
+
+<body>
+  <div class="login-container">
+
+    <img class="logo" src="logo_160px.png"></img>
+    <h1>Welcome to Rateflicks</h1>
+
+    <div class="loading not-loaded">
+      <div class="first"></div>
+      <div class="second"></div>
+      <div class="third"></div>
+    </div>
+
+    <div class="auth-options not-loaded">
+      <button class="gsi">
+        <img src="google.svg"></img>
+        <span>Sign in with Google</span>
+      </button>
+
+      <button class="fb">
+        <img src="fb_white.svg"></img>
+        <span>Sign in with Facebook</span>
+      </button>
+
+      <div class="divider">
+        <div class="divider-segment"></div>
+        <div class="divider-text">OR</div>
+        <div class="divider-segment"></div>
+      </div>
+
+      <div class="email-container">
+        <input class="email" type="email" placeholder="Email:"></input>
+        <button class="email-login"><span>></span></button>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
