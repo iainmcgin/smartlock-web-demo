@@ -1,7 +1,11 @@
+////////////////////////////////////////////////////////////////////////////////
+// cookie utils
+////////////////////////////////////////////////////////////////////////////////
+
 function createCookie(name, value, days) {
   let expires;
   if (days) {
-    var date = new Date();
+    let date = new Date();
     date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
     expires = '; expires=' + date.toGMTString();
   } else {
@@ -11,10 +15,10 @@ function createCookie(name, value, days) {
 }
 
 function readCookie(name) {
-  var nameEQ = name + '=';
-  var ca = document.cookie.split(';');
-  for (var i = 0; i < ca.length; i++) {
-    var c = ca[i];
+  let nameEQ = name + '=';
+  let ca = document.cookie.split(';');
+  for (let i = 0; i < ca.length; i++) {
+    let c = ca[i];
     while (c.charAt(0) == ' ') c = c.substring(1, c.length);
     if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
   }
@@ -24,6 +28,10 @@ function readCookie(name) {
 function eraseCookie(name) {
   createCookie(name, '', -1);
 }
+
+////////////////////////////////////////////////////////////////////////////////
+// authentication cookie state management
+////////////////////////////////////////////////////////////////////////////////
 
 function isAuthenticated() {
   return readCookie('id') !== null;
@@ -46,9 +54,12 @@ function authenticateWithEmail(email) {
 
 function deAuthenticate() {
   eraseCookie('id');
-  console.log('deauthenticated');
   goToLogin();
 }
+
+////////////////////////////////////////////////////////////////////////////////
+// loading utils
+////////////////////////////////////////////////////////////////////////////////
 
 function setLoading(loading) {
   let classToRemove = loading ? 'loaded' : 'not-loaded';
@@ -60,6 +71,10 @@ function setLoading(loading) {
   });
 }
 
+////////////////////////////////////////////////////////////////////////////////
+// navigation
+////////////////////////////////////////////////////////////////////////////////
+
 function goToLogin() {
   console.log('nav to login');
   window.location = '/login.html';
@@ -69,3 +84,13 @@ function goToMain() {
   console.log('nav to mail');
   window.location = '/index.html';
 }
+
+////////////////////////////////////////////////////////////////////////////////
+// workaround: explicitly specify smartlock frame URL until final production
+// push occurs
+////////////////////////////////////////////////////////////////////////////////
+
+window.onSmartLockLoad = () => {
+  openyolo.setProviderUrlBase(
+      'https://smartlock.sandbox.google.com/iframe/request');
+};
