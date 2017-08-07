@@ -91,5 +91,6 @@ function goToMain() {
 ////////////////////////////////////////////////////////////////////////////////
 
 window.onSmartLockLoad = () => {
-  openyolo.setProviderUrlBase('https://smartlock.google.com/iframe/request');
+  openyolo.setProviderUrlBase(
+      'https://smartlock-autopush.corp.google.com/iframe/request');
 };
