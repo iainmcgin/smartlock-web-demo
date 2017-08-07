@@ -6,7 +6,10 @@ function onLoad() {
   }
 
   setLoading(false);
-  document.querySelector('#signout').addEventListener('click', deAuthenticate);
+  document.querySelector('#signout').addEventListener('click', () => {
+    smartlock.disableAutoSignIn()
+        .then(() => deAuthenticate());
+  });
 }
 
 window.addEventListener('load', onLoad);

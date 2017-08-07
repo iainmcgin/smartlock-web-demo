@@ -1,10 +1,10 @@
-// The Rateflicks Google client ID, from the developer console
+// The Rateflicks Google client ID, from the Google developer console
 const clientId =
     '114694971460-q4jm7hi4tj9ph2v1ohlql42oome73suk.apps.googleusercontent.com';
 
-// The paramters used for hint and retrieve requests. In short, we are asking
-// for Google accounts only, and providing the information necessary to source
-// an ID token.
+// The parameters used for hint and retrieve requests. Essentially, we are 
+// asking for a Google account, and providing the information necessary to 
+// source an ID token which is correctly scoped to this application.
 const credentialOptions = {
   supportedAuthMethods: ['https://accounts.google.com'],
   supportedIdTokenProviders:
@@ -23,15 +23,15 @@ function handleSmartlockResult(credential) {
 }
 
 function onLoad() {
-  window.setTimeout(tryAuth, 1000);
-}
-
-function tryAuth() {
   if (isAuthenticated()) {
     goToMain();
     return;
   }
 
+  window.setTimeout(tryAuth, 1000);
+}
+
+function tryAuth() {
   // attempt to retrieve an existing account.
   smartlock.retrieve(credentialOptions)
       .then(handleSmartlockResult)
